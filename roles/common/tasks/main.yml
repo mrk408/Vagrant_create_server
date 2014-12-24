@@ -1,0 +1,22 @@
+---
+- name: 'install Development tools'
+  yum: name='@Development tools' state=present
+
+- name: 'install tools'
+  yum: name={{ item }} state=present
+  with_items:
+    - zlib-devel
+    - bzip2-devel
+    - openssl-devel
+    - ncurses-devel
+    - sqlite-devel
+    - readline-devel
+    - tk-devel
+    - wget
+
+- name: 'user bashprofile'
+  template: src=bash_profile.j2 dest=~/.bash_profile owner=root group=toor mode=0755
+
+- name: 'user bashrc'
+  template: src=bashrc.j2 dest=~/.bashrc owner=toor group=toor mode=0755
+
