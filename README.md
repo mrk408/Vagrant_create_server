@@ -1,4 +1,4 @@
-vagrant-create-server
+ansible
 ==============
 
 python pyenv nginx の構築
