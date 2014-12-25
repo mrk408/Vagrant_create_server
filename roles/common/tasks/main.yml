@@ -5,6 +5,9 @@
 - name: 'install tools'
   yum: name={{ item }} state=present
   with_items:
+    - curl-devel
+    - expat-devel
+    - gettext-devel
     - zlib-devel
     - bzip2-devel
     - openssl-devel
